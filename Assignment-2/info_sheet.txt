@@ -1,0 +1,42 @@
+========================================
+CS/COE 1501 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment.  Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name: Austin Frownfelter 
+
+Lecture section: Wednesday 6:00-8:45 
+
+Recitation day and time: Friday 1:00-1:50
+
+Assignment #: 2
+
+Program due date: 10/14/2016
+
+Handed in date: 10/11/2016
+
+Source code file name(s):
+ MyLZW.java
+ All other prviously included files
+
+
+Other file name(s) (if relevant):
+ None
+
+
+Does your program run without error?: It appears so.  All files compress and expand yielding the original file.
+
+If not, what is/are the error(s) and which parts of your program run
+correctly?:
+
+I am not sure why, but my monitor mode compressed all.tar to a larger file size than the original, but it
+decompressed fine.  I tried my monitor with a .STEP file (a CAD model) and it reset through monitor mode and
+was compressed much smaller than the original.  Since it decompresses properly, monitor mode works as it should.
+
+Additional comments to the grader:
+ The results.txt was formatted with a fixed-width font, and it must be read without word wrap, otherwise it may
+ be hard to read.
+
