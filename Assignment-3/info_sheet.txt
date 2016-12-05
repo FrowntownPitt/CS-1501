@@ -1,0 +1,52 @@
+========================================
+CS/COE 1501 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment.  Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name: Austin Frownfelter 
+
+Lecture section:  Wednesday 6:00-8:45
+
+Recitation day and time:  Friday 1:00
+
+Assignment #:  3
+
+Program due date:  11/03/16
+
+Handed in date:  11/03/16
+
+Source code file name(s):
+- AptTracker.java   <- Main class
+- AptSet.java       <- Priority Queue class
+- Apt.java          <- Apartment object class
+- AptUI.java        <- Helper class for user input
+
+
+Other file name(s) (if relevant):
+N/A
+
+
+Does your program run without error?: It seems so.
+
+If not, what is/are the error(s) and which parts of your program run
+correctly?:
+None.
+
+
+Additional comments to the grader:
+
+I asked Dr. Lipschultz about the data types of certain input, and he
+said it was up to the students to decide.
+
+price -> int
+size  -> int
+zip   -> int
+Apt # -> int
+
+Also, the String inputs are case sensitive, i.e. Pittsburgh != pittsburgh
+
+I added error handling to some parts of input, but not all.  Enter
+malformed input at your own risk!

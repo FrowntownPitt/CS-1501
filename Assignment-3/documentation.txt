@@ -1,0 +1,32 @@
+Description:
+
+The only part which required analyzing tradeoffs in performance/memory is in city indirection.
+For the city indirection, I went with an index HashMap for a single item for each city.  This
+would give a constant runtime for a retrieval of the priority city item.  However, it reduces
+the performance for update, while keeping memory low.  If the city's priority apartment is 
+updated, my program checks to see if it was already the priority, and if the price was greater
+than before.  If it is less than before, it will still be the priority.  If it is greater, it
+will search through all items to find the new priority of that city.  The runtime is the same
+for remove where it only searches for the best in the city if the best in the city is removed.
+
+My tradeoff was less memory for more runtime, but only in the worst case.  The memory overhead
+would have been more detrimental than is the runtime, which makes my consideration the best of
+what is available to me.
+
+
+Runtime:
+- retrieve priority: O(1) 
+- retrieve city priority: O(1) 
+- insert: O(log n)
+        Note: The array grows if it is full.  My 2.0 growth factor amortizes the cost.
+- update: O(log n) best, average
+          O(n) worst, only for price queue
+- remove: O(log n) best, average
+          O(n) worst, only for price queue
+
+Memory Complexity:
+
+- There are 2 hashmaps for each PQ, one for the indirection, one for city indirection.
+- There is a resizing array (manual resizing on full), so only as much as needed 
+    (with a 2.0 growth factor)
+- Overall, there are 2 PQs (size, price), each with hashmaps for indirection
