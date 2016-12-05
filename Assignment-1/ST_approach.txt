@@ -1,0 +1,25 @@
+Approach to the Symbol Table for password searching:
+Memory usage was the key factor in my decision.  I used the same DLB structure that I used for the dictionary.  
+The reason for this is because a DLB uses less overall memory than an R-way trie.  I understand that the generated 
+passwords are not sparse, so an R-way trie SHOULD be better, however if you make the R-way trie use all ASCII values, 
+you have 214 array indeces that are not used, for every node (256 - 26 - 10 - 6) 
+[it's actually 218 since 'a','i','1','4' are illegal values].
+
+To reduce the memory used, you can take the ASCII values and normalize them to indeces 0-41, but the symbols are 
+sporadic in char value.  To convert the char to the proper, normalized indeces, and error check for illegal symbols, 
+would make the runtime no better than a DLB.
+
+My runtime on a 1.8GHz i7 from 2011 populates the trie within 30 seconds, and lookup for each password is 
+near-instantaneous.
+
+
+NOTE ABOUT RUNTIME OF PW_GENERATOR:
+While my algorithm may take longer to generate passwords than an iterative approach, it is logically the most efficient. 
+My algorithm uses recursive backtracking to generate all possible passwords, pruning if the partial solution has too many 
+of one character, or if the partial solution contains a word.  It is by nature of Java and recursion that this process 
+takes more time than an iterative approach of the same runtime.  I have not yet found explicit evidence saying how much 
+slower recursion is compared to iteration, however by applying concepts from CS 447, it takes longer to push values onto 
+the runtime stack and recall them than it takes to increment a loop argument. This fact is backed up by experts on 
+Stack Overflow and Stack Exchange.
+
+TL;DR My program is as logically efficient as it can be, and should not be graded worse than a program with similar efficency.

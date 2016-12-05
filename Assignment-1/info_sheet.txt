@@ -1,0 +1,41 @@
+========================================
+CS/COE 1501 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment.  Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name:  Austin Frownfelter
+
+Lecture section:  Wednesday 6:00-8:45
+
+Recitation day and time:  Friday 1:00-1:50
+
+Assignment #:  1
+
+Program due date:  09/30/2016
+
+Handed in date:  09/28/2016
+
+Source code file name(s):
+- pw_check.java -- main class
+- DLBTrie.java  -- DLB class
+- alt_generator.java -- read dictionary and generate variations, insert into DLB
+- pw_generator.java  -- generate passwords and write to file
+- LinkedString.java  -- An iterable Linked Node class for Trie getKeyWithPrefix methods
+
+
+Other file name(s) (if relevant):
+N/A
+
+
+Does your program run without error?: Yes
+
+
+If not, what is/are the error(s) and which parts of your program run
+correctly?:
+
+
+Additional comments to the grader:
+None
