@@ -35,7 +35,11 @@ public class pw_check {
 			alt_generator alt_gen = new alt_generator(dictionary, "dictionary.txt", altLetters, altSymbols);
 			alt_gen.readDictionary();
 
+<<<<<<< HEAD
 			System.out.println("Finished creating the dictionary.\n");
+=======
+			System.out.println("Finished creating the dictionary. There are " + alt_gen.count + " not-allowed words\n");
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 
 			pw_gen.setOutputToFile(true, "all_passwords.txt");
 
@@ -47,22 +51,31 @@ public class pw_check {
 
 			long time = pw_gen.generateStrings();
 
+<<<<<<< HEAD
 			System.out.println("Finished generating passwords.\n\n"+
+=======
+			System.out.println("Finished generating passwords.\n"+
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 								"It took " + ((double)time)/1000 + " seconds to finish.\n");
 		}
 		else if(args.length > 0 && args[0].equals("-check")){
 			System.out.println("Generating trie from file input....");
 			long t1 = System.nanoTime();
 			//DLBTrie passwords = new DLBTrie();
+<<<<<<< HEAD
 			if(!passwords.collectFromFile("all_passwords.txt")){
 				System.out.println("There was an error in reading the all_passwords.txt file.  "+
 									"\nMake sure you run the -find option before attempting to execute the -check option");
 				throw new FileNotFoundException();
 			}
+=======
+			passwords.collectFromFile("all_passwords.txt");
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 
 			System.out.println("Finished generating trie. It took " + (System.nanoTime()-t1)/1000000 + " ms.");
 
 			Scanner in = new Scanner(System.in);
+<<<<<<< HEAD
 			System.out.println("\nEnter passwords to see if they exist in the trie.  Entering a '.' will end the program.");
 			System.out.print("Enter password: ");
 			String s = in.next();
@@ -90,12 +103,30 @@ public class pw_check {
 						else if(s.length() == 1)
 							s = "";
 						else
+=======
+			System.out.println("\nEnter passwords to see if they exist in the trie.");
+			String s = in.next();
+			do{
+				long t = passwords.getTime(s);
+
+				if(t < 0){
+					System.out.println("'" + s + "' does not exist in the trie.");
+
+					int count = 0;
+					//s = s.substring(0,s.length()-1);
+					//while(count < 10){
+						String[] strings = new String[10-count];
+						if(s.length() > 0)
+							s = s.substring(0,s.length()-1);
+						else 
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 							break;
 						passwords.stringsWithPrefix(s, 10-count, strings);
 						for(int i=0; i<strings.length; i++){
 							if(strings[i] == null || passwords.getTime(strings[i]) < 0){
 								break;
 							}
+<<<<<<< HEAD
 							System.out.println("\t'" + strings[i] + "': " + passwords.getTime(strings[i]) + " ms");
 							count++;
 						}
@@ -107,6 +138,18 @@ public class pw_check {
 				System.out.print("Enter password: ");
 				s = in.next();
 			}
+=======
+							System.out.println("Password: " + strings[i] + ": " + passwords.getTime(strings[i]) + " ms. ");
+							count++;
+						}
+
+					//}
+				} else {
+					System.out.println("'" + s + "' exists.  The time to generate is: " + t + " ms.");
+				}
+				s = in.next();
+			} while(!s.equals("."));
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 		}
 		else if(args.length > 0){
 			System.out.println("ERROR: Unknown command - " + args[0]);

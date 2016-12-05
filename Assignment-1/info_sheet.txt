@@ -6,6 +6,7 @@ You must submit an information sheet with every assignment.  Also be sure
 to submit all materials following the procedures described on the
 submission procedures page.
 
+<<<<<<< HEAD
 Name:  Austin Frownfelter
 
 Lecture section:  Wednesday 6:00-8:45
@@ -33,9 +34,57 @@ N/A
 Does your program run without error?: Yes
 
 
+=======
+Name:  
+
+Lecture section:  
+
+Recitation day and time:  
+
+Assignment #:  
+
+Program due date:  
+
+Handed in date:  
+
+Source code file name(s):
+
+
+
+
+
+
+
+Other file name(s) (if relevant):
+
+
+
+
+
+
+
+Does your program run without error?:
+
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 If not, what is/are the error(s) and which parts of your program run
 correctly?:
 
 
+<<<<<<< HEAD
 Additional comments to the grader:
 None
+=======
+
+
+
+
+
+Additional comments to the grader:
+
+
+
+
+
+
+
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf

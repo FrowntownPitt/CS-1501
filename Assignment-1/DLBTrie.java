@@ -183,7 +183,11 @@ public class DLBTrie {
 	public void stringsWithPrefix(String p, int count, String[] keys){
 		LinkedString<String> q = new LinkedString<>();
 		Node n = get(root, p, 0);
+<<<<<<< HEAD
 		//System.out.println(p + ", " + n.value); 
+=======
+		System.out.println(p + ", " + n.value); 
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 		collect(n, p, q, count);
 		int i=0;
 		Iterator<String> itr = q.iterator();
@@ -221,6 +225,7 @@ public class DLBTrie {
 			n = n.sibling;
 			//System.out.println("GET: " + d + ", " + n.value + ": " + n.child.value);
 		}
+<<<<<<< HEAD
 		//System.out.println("Found " + key.charAt(d) + " " + n.value);
 		return get(n.child, key, d+1);
 	}
@@ -233,6 +238,15 @@ public class DLBTrie {
 		} catch (FileNotFoundException e){
 			return false;
 		}
+=======
+		System.out.println("Found " + key.charAt(d) + " " + n.value);
+		return get(n.child, key, d+1);
+	}
+
+	public boolean collectFromFile(String fileName) throws FileNotFoundException {
+		File dictFile = new File(fileName);
+		FileReader dictReader = new FileReader(dictFile);
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 		try(BufferedReader dictBuffer = new BufferedReader(dictReader)){
 			int i=0;
 			String word = "";
@@ -252,8 +266,13 @@ public class DLBTrie {
 			} while(word != null);
 		}
 		catch (IOException e){
+<<<<<<< HEAD
 			System.err.println(e);
 			System.out.println(" ****** There was an IOException thrown in the collectFromFile method.");
+=======
+			//System.out.println(e);
+			System.out.println(" ****** ERROR: File not found: " + fileName);
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 			return false;
 		}
 		return true;

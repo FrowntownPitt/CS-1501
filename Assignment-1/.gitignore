@@ -10,8 +10,11 @@ all_passwords.txt
 *.war
 *.ear
 
+<<<<<<< HEAD
 # Mac hidden folders
 .DS_Store
 
+=======
+>>>>>>> e7b668820ea34266fa65cf6af4cc22721bad8bdf
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
